@@ -20,7 +20,7 @@ public class GamePanel extends JPanel {
 
 
     //time mangement var
-    private int turnsLeft = 50;
+    private int turnsLeft = 15;
     private boolean mustReturnToBase = false;
     private boolean isDay = true;
     private int turnCount = 1;
@@ -566,13 +566,13 @@ public class GamePanel extends JPanel {
 
         int hudOffset = 40;
 
-        // ✅ HUD background
+        //  HUD background
         g.setColor(Color.DARK_GRAY);
         g.fillRect(0, 0, tileSize * gridSize, hudOffset);
 
-        // ✅ HUD text
+        //  HUD text
 
-        // ✅ Draw tiles
+        //  Draw tiles
         for (int x = 0; x < gridSize; x++) {
             for (int y = 0; y < gridSize; y++) {
                 Tile tile = tiles[x][y];
@@ -583,7 +583,7 @@ public class GamePanel extends JPanel {
             }
         }
 
-        // ✅ Draw buildings
+        // Draw buildings
         for (int x = 0; x < gridSize; x++) {
             for (int y = 0; y < gridSize; y++) {
                 Building b = buildings[x][y];
@@ -594,11 +594,11 @@ public class GamePanel extends JPanel {
             }
         }
 
-        // ✅ Draw player
+        // Draw player
         g.setColor(Color.RED);
         g.fillOval(playerX * tileSize + 8, playerY * tileSize + hudOffset + 8, tileSize - 16, tileSize - 16);
 
-        // ✅ Draw soldiers
+        // Draw soldiers
         g.setColor(Color.CYAN);
         for (Soldier s : soldiers) {
             g.fillOval(s.getX() * tileSize + 8, s.getY() * tileSize + hudOffset + 8, tileSize - 16, tileSize - 16);
@@ -723,7 +723,7 @@ public class GamePanel extends JPanel {
     private void startDayPhase() {
         isDay = true;
         turnCount++;
-        turnsLeft = 15;
+        turnsLeft = 10;
         mustReturnToBase = false;
 
         addKeyListener(keyListener);
@@ -771,3 +771,4 @@ public class GamePanel extends JPanel {
 
 
 }
+
