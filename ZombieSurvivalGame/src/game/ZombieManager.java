@@ -60,7 +60,7 @@ public class ZombieManager {
                     System.out.println("Soldier took " + z.getAttack() + " damage! HP: " + target.getHp());
 
                     if (target.isDead()) {
-                        System.out.println("💀 Soldier killed!");
+                        System.out.println(" Soldier killed!");
                         deadSoldiers.add(target);
                     }
                 } else {
@@ -80,7 +80,7 @@ public class ZombieManager {
 
                     if (game.baseHp <= 0) {
                         game.gameOver = true;
-                        System.out.println("💀 Game Over! The base has fallen.");
+                        System.out.println(" Game Over! The base has fallen.");
                     }
                 }
             }
@@ -109,5 +109,6 @@ public class ZombieManager {
     public static List<Zombie> getZombies() {
         return zombies;
     }
+
 
 }
